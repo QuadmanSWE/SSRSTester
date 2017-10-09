@@ -28,7 +28,10 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
-    <Compile Include="Script.ps1" />
+    <Compile Include="Invoke-SSRS.ps1" />
+    <Compile Include="Set-AutomatedRenderStatus.ps1" />
+    <Compile Include="Get-ReportsToRun.ps1" />
+    <Compile Include="test.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />

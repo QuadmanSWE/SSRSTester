@@ -8,12 +8,6 @@
     <RootNamespace>MyApplication</RootNamespace>
     <AssemblyName>MyApplication</AssemblyName>
     <Name>SSRSTester_PowerShell</Name>
-    <FormatsToProcess />
-    <FunctionsToProcess>Invoke-SSRS</FunctionsToProcess>
-    <ModuleList />
-    <ModuleToProcess />
-    <NestedModules />
-    <TypesToProcess />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,7 +28,6 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
-    <Compile Include="InvokeSSRS.ps1" />
     <Compile Include="Script.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

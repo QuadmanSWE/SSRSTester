@@ -87,13 +87,13 @@
       <Name>ReportingServicesDummy</Name>
       <Project>{09833bbc-3099-4afc-bfc1-df3414809d84}</Project>
       <Private>True</Private>
-      <SuppressMissingDependenciesErrors>True</SuppressMissingDependenciesErrors>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
       <DatabaseSqlCmdVariable>ReportingServicesDummy</DatabaseSqlCmdVariable>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <SqlCmdVariable Include="ReportingServicesDummy">
-      <DefaultValue>ReportingServicesDummy</DefaultValue>
+      <DefaultValue>ReportServer</DefaultValue>
       <Value>$(SqlCmdVar__1)</Value>
     </SqlCmdVariable>
   </ItemGroup>

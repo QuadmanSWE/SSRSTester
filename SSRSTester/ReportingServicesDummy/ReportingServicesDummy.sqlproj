@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>SSRSTester_Database</Name>
+    <Name>ReportingServicesDummy</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{19ce7e8c-4f9e-4c1d-9875-a9c0d3a98694}</ProjectGuid>
+    <ProjectGuid>{09833bbc-3099-4afc-bfc1-df3414809d84}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>SSRSTester_Database</RootNamespace>
-    <AssemblyName>SSRSTester_Database</AssemblyName>
-    <ModelCollation>1033,CI</ModelCollation>
+    <RootNamespace>ReportingServicesDummy</RootNamespace>
+    <AssemblyName>ReportingServicesDummy</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -23,8 +23,6 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
-    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -48,7 +46,6 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TreatTSqlWarningsAsErrors>True</TreatTSqlWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
@@ -60,41 +57,8 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Stage\" />
-    <Folder Include="Stage\Tables\" />
-    <Folder Include="Testing\" />
-    <Folder Include="Testing\Tables\" />
-    <Folder Include="Testing\Views\" />
-    <Folder Include="Testing\Stored Procedures\" />
-    <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Stage\Tables\ReportMetaData.sql" />
-    <Build Include="Testing\Tables\Tests.sql" />
-    <Build Include="Testing\Tables\Reports.sql" />
-    <Build Include="Testing\Tables\ReportTests.sql" />
-    <Build Include="Testing\Views\v_ReportParameters.sql" />
-    <Build Include="Testing\Views\v_ReportsThatHaveSuccessfullyDeployed.sql" />
-    <Build Include="Testing\Stored Procedures\usp_ReportsToRun.sql" />
-    <Build Include="Testing\Stored Procedures\usp_SetAutomatedRenderStatus.sql" />
-    <Build Include="Testing\Stored Procedures\usp_SetDeploymentStatusOnTest.sql" />
-    <Build Include="Security\Stage.sql" />
-    <Build Include="Security\Testing.sql" />
-    <Build Include="Security\Permissions.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ReportingServicesDummy\ReportingServicesDummy.sqlproj">
-      <Name>ReportingServicesDummy</Name>
-      <Project>{09833bbc-3099-4afc-bfc1-df3414809d84}</Project>
-      <Private>True</Private>
-      <SuppressMissingDependenciesErrors>True</SuppressMissingDependenciesErrors>
-      <DatabaseSqlCmdVariable>ReportingServicesDummy</DatabaseSqlCmdVariable>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <SqlCmdVariable Include="ReportingServicesDummy">
-      <DefaultValue>ReportingServicesDummy</DefaultValue>
-      <Value>$(SqlCmdVar__1)</Value>
-    </SqlCmdVariable>
+    <Build Include="Catalog.sql" />
   </ItemGroup>
 </Project>

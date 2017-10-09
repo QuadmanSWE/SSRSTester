@@ -97,4 +97,7 @@
       <Value>$(SqlCmdVar__1)</Value>
     </SqlCmdVariable>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="SSRSTester_Database_DavidsDator.publish.xml" />
+  </ItemGroup>
 </Project>

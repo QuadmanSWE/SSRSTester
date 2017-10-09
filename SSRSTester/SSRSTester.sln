@@ -10,6 +10,11 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SSRSTester_Database", "SSRS
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ReportingServicesDummy", "ReportingServicesDummy\ReportingServicesDummy.sqlproj", "{09833BBC-3099-4AFC-BFC1-DF3414809D84}"
 EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "SSRSTester_PowerShell", "SSRSTester_PowerShell\SSRSTester_PowerShell.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
+	ProjectSection(ProjectDependencies) = postProject
+		{19CE7E8C-4F9E-4C1D-9875-A9C0D3A98694} = {19CE7E8C-4F9E-4C1D-9875-A9C0D3A98694}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +33,10 @@ Global
 		{09833BBC-3099-4AFC-BFC1-DF3414809D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09833BBC-3099-4AFC-BFC1-DF3414809D84}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09833BBC-3099-4AFC-BFC1-DF3414809D84}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

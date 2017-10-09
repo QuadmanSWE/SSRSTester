@@ -1,8 +1,14 @@
-﻿CREATE PROCEDURE [Testing].[usp_SetAutomatedRenderStatus] @ItemID uniqueidentifier, @TestID INT, @success bit
+﻿CREATE PROCEDURE [Testing].[usp_SetAutomatedRenderStatus]
+  @ItemID uniqueidentifier
+, @TestID INT
+, @success bit
+, @ErrorMessage nvarchar(2000) = NULL
 AS BEGIN
-UPDATE rt
-set SuccessfulAutomaticRun = @success
-FROM [Testing].[ReportTests] as rt
-WHERE rt.ItemID = @ItemID
-AND rt.TestID = @TestID
+UPDATE [rt]
+SET
+  [SuccessfulAutomaticRun] = @success
+, [AutoMaticRunException] = @ErrorMessage
+FROM [Testing].[ReportTests] AS [rt]
+WHERE [rt].[ItemID] = @ItemID
+AND [rt].[TestID] = @TestID
 END

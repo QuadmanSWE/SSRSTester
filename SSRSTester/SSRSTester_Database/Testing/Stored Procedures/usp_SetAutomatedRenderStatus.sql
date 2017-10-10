@@ -7,7 +7,7 @@ AS BEGIN
 UPDATE [rt]
 SET
   [SuccessfulAutomaticRun] = @success
-, [AutoMaticRunException] = @ErrorMessage
+, [AutomaticRunException] = @ErrorMessage
 FROM [Testing].[ReportTests] AS [rt]
 WHERE [rt].[ItemID] = @ItemID
 AND [rt].[TestID] = @TestID

@@ -100,4 +100,7 @@
   <ItemGroup>
     <None Include="SSRSTester_Database_DavidsDator.publish.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="SSRSTester_Database.refactorlog" />
+  </ItemGroup>
 </Project>

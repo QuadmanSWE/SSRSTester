@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="8ee849b2-a88d-4509-8592-8f22dfcdd62d" ChangeDateTime="10/10/2017 07:48:51">
+    <Property Name="ElementName" Value="[Testing].[ReportTests].[AutoMaticRunException]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Testing].[ReportTests]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AutomaticRunException" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b20cd991-3793-4495-a957-b461e4ea93f9" ChangeDateTime="10/10/2017 07:48:57">
+    <Property Name="ElementName" Value="[Testing].[ReportTests].[DeploymentErrors]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Testing].[ReportTests]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ManualDeploymentErrors" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8c9a733a-6afb-419e-86b7-b39c7b1e4422" ChangeDateTime="10/10/2017 07:49:01">
+    <Property Name="ElementName" Value="[Testing].[ReportTests].[DeploymentErrorMessage]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Testing].[ReportTests]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ManualDeploymentErrorMessage" />
+  </Operation>
+</Operations>

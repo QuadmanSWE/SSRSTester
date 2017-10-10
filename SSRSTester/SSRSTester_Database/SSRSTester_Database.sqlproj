@@ -81,6 +81,7 @@
     <Build Include="Security\Stage.sql" />
     <Build Include="Security\Testing.sql" />
     <Build Include="Security\Permissions.sql" />
+    <None Include="Example Test 1 - Stage.sql" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReportingServicesDummy\ReportingServicesDummy.sqlproj">
@@ -99,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="SSRSTester_Database_DavidsDator.publish.xml" />
+    <None Include="Example Test 2 - Local.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="SSRSTester_Database.refactorlog" />

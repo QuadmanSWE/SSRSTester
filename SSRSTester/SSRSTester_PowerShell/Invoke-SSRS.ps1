@@ -1,23 +1,19 @@
 function Invoke-SSRS
-($reportsToRun,[string]$ReportServerURL,[string]$ReportServerInstance,[string]$format, [string]$localFolderForFiles, [System.Data.SqlClient.SqlConnection]$SQLConnection)
+($reportsToRun,[string]$ServerName,[string]$ReportServerInstance,[string]$format, [string]$localFolderForFiles, [System.Data.SqlClient.SqlConnection]$SQLConnection)
 {
 
-    $ReportServer = "$ReportServerURL//reportserver_$ReportServerInstance//"
-    #$Reports = "$ReportServerURL//reports_$ReportServerInstance//"
+    $ReportServer = "http://$ServerName//reportserver_$ReportServerInstance//"
     
 	$ExecutionURI = $ReportServer + "ReportExecution2005.asmx?wsdl"
     $ReportingURI = $ReportServer + "ReportService2010.asmx?wsdl"
 	
     $ExectutionProxy = New-WebServiceProxy -Uri $ExecutionURI -UseDefaultCredential -namespace "ReportExecution2005" # this loads the assembly needed for executing reports on reportserver
-    $BrowsingProxy   = New-WebServiceProxy -Uri $ReportingURI -UseDefaultCredential -namespace "ReportService2010"   # this loads the assembly needed for browsing the reports 
+    $BrowsingProxy   = New-WebServiceProxy -Uri $ReportingURI -UseDefaultCredential -namespace "ReportService2010"   # this loads the assembly needed for browsing the reports
 
     foreach($r in $reportsToRun)
     {
         $reportGuid = $r.ItemID
         $ReportPath = $r.OldReportPath
-
-
-        
 
         #  For each parameter, set a value if there isn't a default and add it to a list
         #  Using the browser, set all parameters to either their first valid value or "1" if it allows any string.
@@ -32,12 +28,10 @@ function Invoke-SSRS
             $param.Name = $p.Name
             if ($p.ValidValues -ne $null)
             {
-                $param.Value = $p.ValidValues[0].Value
-                #$validValues = [string]::Join(",", ($p.ValidValues |
-                               #ForEach-Object {$_.Value}))
+                $param.Value = $p.ValidValues[0].Value #if there is a value list in SSRS, take the first one.
             }
             else {
-                $param.Value = "1" 
+                $param.Value = "1"  #otherwize, just try and set it to "1" and hope for the best :)
             }
             $listOfParameters.add($param)
         }
@@ -92,7 +86,7 @@ function Invoke-SSRS
         }
         
         Set-AutomatedRenderStatus $reportGuid $testID $success $ErrorMessage $SQLConnection
-
+		$success
     }
 	
 	
